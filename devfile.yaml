@@ -42,6 +42,11 @@ components:
     volume:
       size: 3Gi
 commands:
+  - id: init-compile
+    exec:
+      component: tools
+      commandLine: './mvnw -Dmaven.repo.local=/home/user/.m2/repository compile'
+      workingDir: ${PROJECT_SOURCE}
   - id: dev-run
     exec:
       component: tools
